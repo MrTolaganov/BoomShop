@@ -1,37 +1,49 @@
 <div class="w-75 mx-auto">
   <p class="fs-1">Register</p>
+  {{#if registerError}}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Error:</strong>
+      {{registerError}}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+  {{/if}}
   <form action="/register" method="post">
     <div class="d-flex gap-3">
       <div class="form-floating mb-3 w-50">
         <input
           type="text"
           class="form-control"
-          id="floatingInput"
+          id="floatingInputfs"
           name="firstname"
           placeholder="Otabek"
         />
-        <label for="floatingInput">Firstname</label>
+        <label for="floatingInputfs">Firstname</label>
       </div>
       <div class="form-floating mb-3 w-50">
         <input
           type="text"
           class="form-control"
-          id="floatingInput"
+          id="floatingInputls"
           name="lastname"
           placeholder="Tulaganov"
         />
-        <label for="floatingInput">Lastname</label>
+        <label for="floatingInputls">Lastname</label>
       </div>
     </div>
     <div class="form-floating mb-3">
       <input
         type="email"
         class="form-control"
-        id="floatingInput"
+        id="floatingInputea"
         name="email"
         placeholder="name@example.com"
       />
-      <label for="floatingInput">Email address</label>
+      <label for="floatingInputea">Email address</label>
     </div>
     <div class="form-floating">
       <input

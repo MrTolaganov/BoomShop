@@ -47,32 +47,43 @@
           role="group"
           aria-label="Basic mixed styles example"
         >
-          {{#if isLogin}}
-            <button type="button" class="btn btn-primary active">
-              <a href="/login" class="text-light text-decoration-none">Login</a>
+          {{#if token}}
+            <button type="button" class="btn btn-danger active">
+              <a href="/logout" class="text-light text-decoration-none">Logout</a>
             </button>
           {{else}}
-            <button type="button" class="btn btn-primary">
-              <a href="/login" class="text-light text-decoration-none">Login</a>
-            </button>
-          {{/if}}
+            {{#if isLogin}}
+              <button type="button" class="btn btn-primary active">
+                <a
+                  href="/login"
+                  class="text-light text-decoration-none"
+                >Login</a>
+              </button>
+            {{else}}
+              <button type="button" class="btn btn-primary">
+                <a
+                  href="/login"
+                  class="text-light text-decoration-none"
+                >Login</a>
+              </button>
+            {{/if}}
 
-          {{#if isRegister}}
-            <button type="button" class="btn btn-success active">
-              <a
-                href="/register"
-                class="text-light text-decoration-none"
-              >Register</a>
-            </button>
-          {{else}}
-            <button type="button" class="btn btn-success">
-              <a
-                href="/register"
-                class="text-light text-decoration-none"
-              >Register</a>
-            </button>
+            {{#if isRegister}}
+              <button type="button" class="btn btn-success active">
+                <a
+                  href="/register"
+                  class="text-light text-decoration-none"
+                >Register</a>
+              </button>
+            {{else}}
+              <button type="button" class="btn btn-success">
+                <a
+                  href="/register"
+                  class="text-light text-decoration-none"
+                >Register</a>
+              </button>
+            {{/if}}
           {{/if}}
-
         </div>
       </nav>
     </div>
