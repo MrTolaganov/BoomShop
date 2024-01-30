@@ -1,3 +1,24 @@
-.dark {
-    background-color: #000;
+.avatar {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.avatar p {
+  padding: 0;
+  margin: 0;
+}
+
+.product-image {
+  width: 100%;
+  height: 70vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }

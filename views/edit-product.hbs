@@ -1,9 +1,9 @@
 <div class="w-75 mx-auto">
-  <p class="fs-1">Add product</p>
-  {{#if addError}}
+  <p class="fs-1">Edit product</p>
+  {{#if editError}}
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
       <strong>Error!</strong>
-      {{addError}}
+      {{editError}}
       <button
         type="button"
         class="btn-close"
@@ -12,13 +12,14 @@
       ></button>
     </div>
   {{/if}}
-  <form action="/add" method="post">
+  <form action="/edit-product/{{product._id}}" method="post">
     <div class="form-floating mb-3">
       <input
         type="text"
         class="form-control"
         id="floatingInputea"
         name="title"
+        value="{{product.title}}"
         placeholder="Title"
       />
       <label for="floatingInputea">Title</label>
@@ -30,7 +31,7 @@
         id="floatingTextarea2"
         name="description"
         style="height: 100px"
-      ></textarea>
+      >{{product.description}}</textarea>
       <label for="floatingTextarea2">Description</label>
     </div>
     <div class="form-floating mb-3">
@@ -39,6 +40,7 @@
         class="form-control"
         id="floatingInputI"
         name="image"
+        value="{{product.image}}"
         placeholder="Image"
       />
       <label for="floatingInputI">Image</label>
@@ -51,11 +53,12 @@
           class="form-control"
           id="floatingInputGroup1"
           name="price"
+          value="{{product.price}}"
           placeholder="Price"
         />
         <label for="floatingInputGroup1">Price</label>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary mt-3">Add product</button>
+    <button type="submit" class="btn btn-primary mt-3">Edit product</button>
   </form>
 </div>

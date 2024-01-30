@@ -2,16 +2,12 @@ import { Router } from "express";
 import bcrypt from "bcrypt";
 import User from "../models/User.js";
 import { generateJWTToken } from "../services/token.js";
+import homePage from "../middleware/home-page.js";
 
 const router = Router();
 
 // Login
-router.get("/login", (req, res) => {
-  if (req.cookies.token) {
-    res.redirect("/");
-    return;
-  }
-
+router.get("/login", homePage, (req, res) => {
   res.render("login", {
     title: "Login",
     isLogin: true,
@@ -47,12 +43,7 @@ router.post("/login", async (req, res) => {
 });
 
 // Register
-router.get("/register", (req, res) => {
-  if (req.cookies.token) {
-    res.redirect("/");
-    return;
-  }
-
+router.get("/register", homePage, (req, res) => {
   res.render("register", {
     title: "Register",
     isRegister: true,
